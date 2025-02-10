@@ -1,0 +1,17 @@
+name: env-wf
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  regular-wf-build:
+    runs-on: [ ubuntu-latest ]
+    environment: test
+
+    steps:
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
